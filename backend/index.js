@@ -7,13 +7,13 @@ mongoose.connection.on("connected", () => {
   console.log("connect to MongoDB 📚 📊");
 });
 
-// console.log('Requiring user.model...');
-const User = require("../models/User.model");
-// console.log(Error);
+console.log('Requiring user.model...');
+const User = require("/Users/namfah/Desktop/noteApp/models/User.model.js");
+console.log(Error);
 
-// console.log('Requiring note.model...')
-const Note = require("../models/Note.model")
-// console.log('Note model loaded:', Note);
+console.log('Requiring note.model...')
+const Note = require("/Users/namfah/Desktop/noteApp/models/Note.model.js")
+console.log('Note model loaded:', Note);
 
 
 const express = require("express");
@@ -179,7 +179,6 @@ app.post("/add-note", authenticateToken, async (req, res) => {
         });
     }
 });
-
 app.put("/edit-note/:noteId", authenticateToken, async (req, res) => {
     const noteId = req.params.noteId;
     const { title, content, tags, isPinned } = req.body;
